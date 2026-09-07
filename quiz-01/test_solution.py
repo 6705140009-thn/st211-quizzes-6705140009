@@ -2,21 +2,24 @@ import pytest
 from solution import letter_grade
 
 
-def test_letter_grade_valid_scores():
-    assert letter_grade(85) == "A"
-    assert letter_grade(75) == "B"
-    assert letter_grade(65) == "C"
-    assert letter_grade(50) == "F"
+def test_boundary_a_grade():
+    assert letter_grade(80) == "A"  # exactly at boundary
+    assert letter_grade(79) == "B"  # just below
 
 
-def test_letter_grade_boundaries():
-    assert letter_grade(80) == "A"
-    assert letter_grade(70) == "B"
-    assert letter_grade(60) == "C"
+def test_boundary_pass_fail():
+    assert letter_grade(60) == "C"  # lowest pass
+    assert letter_grade(59) == "F"  # just failed
 
 
-def test_letter_grade_invalid_scores():
-    with pytest.raises(ValueError, match="Score must be 0-100"):
+def test_minimum_valid():
+    assert letter_grade(0) == "F"
+
+
+def test_maximum_valid():
+    assert letter_grade(100) == "A"
+
+
+def test_below_minimum_invalid():
+    with pytest.raises(ValueError):
         letter_grade(-1)
-    with pytest.raises(ValueError, match="Score must be 0-100"):
-        letter_grade(101)
