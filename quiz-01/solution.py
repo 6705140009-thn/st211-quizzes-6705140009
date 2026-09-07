@@ -1,15 +1,10 @@
-class BankAccount:
-    def __init__(self, balance=0):
-        self.balance = balance
-
-    def deposit(self, amount):
-        if amount <= 0:
-            raise ValueError("Deposit must be positive")
-        self.balance += amount
-        return self.balance
-
-    def withdraw(self, amount):
-        if amount > self.balance:
-            raise ValueError("Insufficient funds")
-        self.balance -= amount
-        return self.balance
+def letter_grade(score):
+    if score < 0 or score > 100:
+        raise ValueError("Score must be 0-100")
+    if score >= 80:
+        return "A"
+    if score >= 70:
+        return "B"
+    if score >= 60:
+        return "C"
+    return "F"
