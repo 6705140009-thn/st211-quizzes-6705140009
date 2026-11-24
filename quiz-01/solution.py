@@ -1,3 +1,6 @@
+# Student: Thet Htoo Naing
+# Student ID: 6705140009
+
 def letter_grade(score):
     if score < 0 or score > 100:
         raise ValueError("Score must be 0-100")
