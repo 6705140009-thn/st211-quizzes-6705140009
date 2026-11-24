@@ -1,5 +1,7 @@
 # 192-211 Automated Software Testing
 
+[![Python tests](https://github.com/6705140009-thn/st211-quizzes-6705140009/actions/workflows/tests.yml/badge.svg)](https://github.com/6705140009-thn/st211-quizzes-6705140009/actions/workflows/tests.yml)
+
 Student: **Thet Htoo Naing**
 
 Student ID: **6705140009**
